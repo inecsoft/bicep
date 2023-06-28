@@ -21,7 +21,8 @@ az deployment group --help
 ```
 resourceGroupName=$(az group list --query "[].{name:name}" --output tsv)
 echo $resourceGroupName
-deploymentName="castorageaccountdeployment"
+deploymentName=$(az deployment group list --resource-group $resourceGroupName --query "[].{name:name}" --output tsv)
+echo $deploymentName
 templateFile="storageAccount.bicep"
 ```
 

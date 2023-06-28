@@ -5,7 +5,7 @@ param adminUsername string = 'admin-user'
 param uniqstr string = uniqueString(resourceGroup().id)
 
 resource storageaccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
- name: '${storagePrefix}${env}'
+ name: 'storageaccount2019${env}'
  location: location
  kind: 'StorageV2'
  sku: {
@@ -13,10 +13,13 @@ resource storageaccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
  }
 }
 
-resource windowsVM 'Microsoft.Compute/virtualMachines@2020-12-01' = {
-  name: '${storagePrefix}${env}'
+resource windowsVM2019 'Microsoft.Compute/virtualMachines@2020-12-01' = {
+  name: 'windowsVM2019'
   location: location
   properties: {
+    billingProfile: {
+      maxPrice: json('0.01538')
+    }
     hardwareProfile: {
       vmSize: 'Standard_B1ms'
     }
@@ -38,13 +41,13 @@ resource windowsVM 'Microsoft.Compute/virtualMachines@2020-12-01' = {
         createOption: 'FromImage'
       }
     }
-    networkProfile: {
-      networkInterfaces: [
-        {
-          id: 'id'
-        }
-      ]
-    }
+    // networkProfile: {
+    //   networkInterfaces: [
+    //     {
+    //       id: networkInterface.id
+    //     }
+    //   ]
+    // }
     diagnosticsProfile: {
       bootDiagnostics: {
         enabled: true
@@ -53,3 +56,22 @@ resource windowsVM 'Microsoft.Compute/virtualMachines@2020-12-01' = {
     }
   }
 }
+
+// resource networkInterface 'Microsoft.Network/networkInterfaces@2020-11-01' = {
+//   name: 'networkInterface${env}'
+//   location: location
+//   properties: {
+//     ipConfigurations: [
+//       {
+//         name: 'networkInterface${env}'
+//         properties: {
+//           privateIPAllocationMethod: 'Dynamic'
+//           subnet: {
+//             id: 'subnet.id'
+//           }
+//         }
+//       }
+//     ]
+//   }
+// }
+
