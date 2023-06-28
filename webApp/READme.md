@@ -1,8 +1,8 @@
 ---
+
 <div align="center">
 <img src="images/bicep.jpg" width="700" />
 </div>
----
 
 ### **Log in to Azure account using Azure CLI as a first step to interact with Azure resources by using the following command:**
 
