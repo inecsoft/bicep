@@ -12,8 +12,6 @@ az login -u student-3290-1937515@labscloudacademy.onmicrosoft.com -p Ca1_CLGWMsY
 
 #### The .bicep extension tells you that this is a deployment template written in the Bicep language. For any Bicep syntax-highlighting to occur, the file extension needs to be .bicep.
 
----
-
 ```
 az deployment group --help
 ```

@@ -1,18 +1,16 @@
 ---
 <div align="center">
-<img src="images/bicep.jpg" width="700" />
+<img src="images/bicep.jpg" width="700"/>
 </div>
+---
 
-
-#### __Log in to Azure account using Azure CLI as a first step to interact with Azure resources by using the following command:__
+#### Log in to Azure account using Azure CLI as a first step to interact with Azure resources by using the following command:
 
 ```
 az login -u student-3290-1937515@labscloudacademy.onmicrosoft.com -p Ca1_CLGWMsYV
 ```
 
 #### The .bicep extension tells you that this is a deployment template written in the Bicep language. For any Bicep syntax-highlighting to occur, the file extension needs to be .bicep.
-
----
 
 ```
 az deployment group --help
