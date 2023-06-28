@@ -3,9 +3,8 @@
 <img src="images/bicep.jpg" width="700" />
 </div>
 
-***
 
-#### **Log in to Azure account using Azure CLI as a first step to interact with Azure resources by using the following command:**
+#### __Log in to Azure account using Azure CLI as a first step to interact with Azure resources by using the following command:__
 
 ```
 az login -u student-3290-1937515@labscloudacademy.onmicrosoft.com -p Ca1_CLGWMsYV
